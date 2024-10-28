@@ -1,13 +1,14 @@
 # routes.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 from flask_jwt_extended import JWTManager, create_access_token, create_refresh_token, jwt_required, get_jwt_identity
 from models import db, User
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///crearbasededatos'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['JWT_SECRET_KEY'] = 'jwt_secret_key'
 db.init_app(app)
 jwt = JWTManager(app)
+auth_blueprint = Blueprint('auth', __name__)
 
 @app.route('/register', methods=['POST'])
 def register():

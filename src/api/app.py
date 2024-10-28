@@ -1,4 +1,4 @@
-#PENDIENTE REVISAR ESTE ARCHIVO. FLASK RUN INDICA QUE LA RUTA NO ES CORRECTAafgag
+#PENDIENTE REVISAR ESTE ARCHIVO. FLASK RUN INDICA QUE LA RUTA NO ES CORRECTA
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
